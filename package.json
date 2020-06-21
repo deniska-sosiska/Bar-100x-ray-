@@ -1,0 +1,26 @@
+{
+  "name": "bar-100x-ray-",
+  "version": "1.0.0",
+  "description": "mini-game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deniska-sosiska/Bar-100x-ray-.git"
+  },
+  "author": "deniska-sosiska",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deniska-sosiska/Bar-100x-ray-/issues"
+  },
+  "homepage": "https://github.com/deniska-sosiska/Bar-100x-ray-#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "http": "0.0.1-security"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
