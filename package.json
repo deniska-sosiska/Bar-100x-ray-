@@ -4,7 +4,8 @@
   "description": "mini-game",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,9 @@
   },
   "homepage": "https://github.com/deniska-sosiska/Bar-100x-ray-#readme",
   "dependencies": {
-    "chalk": "^4.1.0",
-    "http": "0.0.1-security"
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
