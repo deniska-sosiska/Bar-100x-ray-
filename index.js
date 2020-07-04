@@ -1,12 +1,13 @@
-// const http = require('http')
-
+const path = require('path')
 const express = require('express')
 const app = express()
+const server = require('http').createServer(app)
+const io = require('socket.io').listen(server)
 
-app.get('/', function(req, res) {
-   res.sendfile(__dirname + '/index.html')
+
+app.get('/', function(request, response) {
+  response.sendfile(path.join(__dirname + '/site/index.html'))
 })
 
-app.listen(3000, () => {
-  console.log("hi girls")
-})
+
+server.listen(9999)
