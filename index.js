@@ -6,11 +6,4 @@ const io = require('socket.io').listen(server);
 
 app.use(express.static(__dirname + '/site'));
 
-
-
-// app.get('/', function(request, response) {
-//   response.sendfile(path.join(__dirname + '/site/index.html'));
-// })
-
-
 server.listen(9999);

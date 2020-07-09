@@ -15,7 +15,13 @@ section.main {
   min-height: 100vh;
   background-color: #ccc;
   box-sizing: border-box;
+}
 
+section.rooma{
+  min-height: 100vh;
+  background: url('img/background_room.png');
+  background-size: auto 100%;
+  box-sizing: border-box;
 }
 
 h2 {
@@ -56,4 +62,21 @@ h2 {
 }
 .room__body_btn > a > input:hover {
   font-size: 18px;
+}
+
+.qwe {
+  padding-bottom: 50px;
+}
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.card {
+  width: 320px;
+  height: 380px;
+  margin: 50px 5px;
+  background-color: #809fff;
+  border-radius: 55px 20px;
+  padding: 20px;
 }
