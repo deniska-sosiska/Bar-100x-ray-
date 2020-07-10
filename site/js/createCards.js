@@ -96,30 +96,29 @@ for (let i = 0; i < users; i++) {
   let phobias = getAttribute(forPhobias, professionThatWas);
   let forHumanQuality = funcToGetStr('Качество человека');
   let humanQuality = getAttribute(forHumanQuality, professionThatWas);
-  let forAdditionalInfo = funcToGetStr('Дополнительная информация');
-  let additionalInfo = getAttribute(forAdditionalInfo, professionThatWas);
-  let forAction = funcToGetStr('Карты действия');
-  let action = getAttribute(forAction, professionThatWas);
+
+  // Получаю доп. атрибуты
+  if (random.int(0, 3) == 3) {
+     forAdditionalInfo = funcToGetStr('Дополнительная информация');
+     additionalInfo = getAttribute(forAdditionalInfo, professionThatWas);
+  } else {  additionalInfo = 'none';  }
+  if (random.int(0, 3) == 3) {
+     forAction = funcToGetStr('Карты действия');
+     action = getAttribute(forAction, professionThatWas);
+  } else {  action = 'none';  }
 
   // Получаю Биологичесткую характеристику
   let age = random.int(18, 68);
-  if (random.int(0, 1) == 1) {
-    sex = 'Мужчина';
-  }
-  else {
-    sex = 'Женщина';
-  }
-  if (random.int(0, 3) == 3) {
-     biologicalCharacterization = [sex, age,'чайлдфри'];
-  }
-  else {
-     biologicalCharacterization = [sex, age];
-  }
+  if (random.int(0, 1) == 1) {  sex = 'Мужчина';  }
+  else {  sex = 'Женщина';  }
+  if (random.int(0, 3) == 3) {  biologicalCharacterization = [sex, age,'чайлдфри']; }
+  else {  biologicalCharacterization = [sex, age];  }
+
   // создаю/перезаписываю класс, и добавляю его в массив
   let card = new Card(profession, health, biologicalCharacterization, baggage, hobby, phobias, humanQuality, additionalInfo, action);
   cards.push(card);
 }
-console.log(cards);
+// console.log(cards);
 
 
 
