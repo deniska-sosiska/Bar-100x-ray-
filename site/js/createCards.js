@@ -1,19 +1,11 @@
 const fs = require('fs');
 const random = require('random');
 
+//var
 let users = 9;
 let cards = [];
 
-let professionThatWas = [];
-let healthThatWas = [];
-let baggageThatWas = [];
-let hobbyThatWas = [];
-let phobiasThatWas = [];
-let humanQualityThatWas = [];
-let additionalInfoThatWas = [];
-let actionThatWas = [];
-
-
+//func
 function funcToGetStr(nameFile) {
   let words = '';
   let array = [];
@@ -48,9 +40,6 @@ function createCatastrophe(nameArray) {
   return [nameCatastrophe, descriptionCatastrophe];
 }
 
-let forCatastrophe = funcToGetStr('Катастрофы');
-let catastrophe = createCatastrophe(forCatastrophe);
-
 function getAttribute(forAttribute, array) {
   let exitFromGetAttribute = true;
   while (exitFromGetAttribute) {
@@ -82,6 +71,7 @@ class Card {
 }
 
 
+// int main() {
 for (let i = 0; i < users; i++) {
   // получаю атрибуты
   let forProfession = funcToGetStr('Профессии');
@@ -118,11 +108,8 @@ for (let i = 0; i < users; i++) {
   let card = new Card(profession, health, biologicalCharacterization, baggage, hobby, phobias, humanQuality, additionalInfo, action);
   cards.push(card);
 }
-// console.log(cards);
 
+let forCatastrophe = funcToGetStr('Катастрофы');
+let catastrophe = createCatastrophe(forCatastrophe);
 
-
-
-
-
-// end
+//}
