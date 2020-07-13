@@ -5,6 +5,8 @@ const random = require('random');
 let users = 9;
 let cards = [];
 
+let arrayForNonRepeat = ['none'];
+
 //func
 function funcToGetStr(nameFile) {
   let words = '';
@@ -16,9 +18,7 @@ function funcToGetStr(nameFile) {
       array.push(words);
       words = '';
       number += 1;
-    } else {
-      words += fileThatRead[letter];
-    }
+    } else {  words += fileThatRead[letter];  }
   }
   return [array, number];
 }
@@ -40,14 +40,34 @@ function createCatastrophe(nameArray) {
   return [nameCatastrophe, descriptionCatastrophe];
 }
 
-function getAttribute(forAttribute, array) {
+
+function getAttributeWithOutRepeat(forAttribute) {
+  for (let i = 1; i < arrayForNonRepeat.length; i++) {
+    if  (arrayForNonRepeat[i] == forAttribute) {
+      arrayForNonRepeat.shift();
+      attribute = 'Not this';
+      break;
+    }
+    else {  attribute = forAttribute; }
+  }
+  return attribute;
+}
+
+function getAttribute(forAttribute) {
   let exitFromGetAttribute = true;
   while (exitFromGetAttribute) {
-    let q = random.int(1, forAttribute[1] - 1);
+    let forRandom = random.int(1, forAttribute[1] - 1);
     for (let i = 0; i < forAttribute[1] - 1; i++) {
-      if (q == i) {
-        attribute = forAttribute[0][i];
-        exitFromGetAttribute = false;
+      if (forRandom == i) {
+        forAAttribute = forAttribute[0][i];
+        arrayForNonRepeat.unshift(forAAttribute);
+        attribute = getAttributeWithOutRepeat(forAAttribute);
+        if (attribute == 'Not this') {
+          exitFromGetAttribute = true;
+        } else {
+          exitFromGetAttribute = false;
+          break;
+        }
       }
     }
   }
@@ -75,26 +95,26 @@ class Card {
 for (let i = 0; i < users; i++) {
   // получаю атрибуты
   let forProfession = funcToGetStr('Профессии');
-  let profession = getAttribute(forProfession, professionThatWas);
+  let profession = getAttribute(forProfession);
   let forHealth = funcToGetStr('Болезни');
-  let health = getAttribute(forHealth, professionThatWas);
+  let health = getAttribute(forHealth);
   let forBaggage = funcToGetStr('Багаж');
-  let baggage = getAttribute(forBaggage, professionThatWas);
+  let baggage = getAttribute(forBaggage);
   let forHobby = funcToGetStr('Хобби');
-  let hobby = getAttribute(forHobby, professionThatWas);
+  let hobby = getAttribute(forHobby);
   let forPhobias = funcToGetStr('Фобии');
-  let phobias = getAttribute(forPhobias, professionThatWas);
+  let phobias = getAttribute(forPhobias);
   let forHumanQuality = funcToGetStr('Качество человека');
-  let humanQuality = getAttribute(forHumanQuality, professionThatWas);
+  let humanQuality = getAttribute(forHumanQuality);
 
   // Получаю доп. атрибуты
   if (random.int(0, 3) == 3) {
-     forAdditionalInfo = funcToGetStr('Дополнительная информация');
-     additionalInfo = getAttribute(forAdditionalInfo, professionThatWas);
+    forAdditionalInfo = funcToGetStr('Дополнительная информация');
+    additionalInfo = getAttribute(forAdditionalInfo);
   } else {  additionalInfo = 'none';  }
   if (random.int(0, 3) == 3) {
-     forAction = funcToGetStr('Карты действия');
-     action = getAttribute(forAction, professionThatWas);
+    forAction = funcToGetStr('Карты действия');
+    action = getAttribute(forAction);
   } else {  action = 'none';  }
 
   // Получаю Биологичесткую характеристику
@@ -112,4 +132,5 @@ for (let i = 0; i < users; i++) {
 let forCatastrophe = funcToGetStr('Катастрофы');
 let catastrophe = createCatastrophe(forCatastrophe);
 
+console.log(cards);
 //}
