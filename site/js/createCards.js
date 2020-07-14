@@ -1,12 +1,10 @@
 const myFunc = require('./myFunc') // Подключаю свои функции и класс
-const myClass = require('./myClass') // Подключаю свои функции и класс
+const Card = require('./myClass') // Подключаю свои функции и класс
 const random = require('random');
-
 
 //var
 let users = 9;
 let cards = [];
-
 
 // int main() {
 for (let i = 0; i < users; i++) {
@@ -42,12 +40,13 @@ for (let i = 0; i < users; i++) {
   else {  biologicalCharacterization = [sex, age];  }
 
   // создаю/перезаписываю класс, и добавляю его в массив
-  let card = new myClass(profession, health, biologicalCharacterization, baggage, hobby, phobias, humanQuality, additionalInfo, action);
+  let card = new Card(profession, health, biologicalCharacterization, baggage, hobby, phobias, humanQuality, additionalInfo, action);
   cards.push(card);
 }
 
 let forCatastrophe = myFunc.funcToGetStr('Катастрофы');
 let catastrophe = myFunc.createCatastrophe(forCatastrophe);
 
-console.log(cards);
+// console.log(cards);
+module.exports = cards;
 //}

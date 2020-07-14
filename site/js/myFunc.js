@@ -1,15 +1,15 @@
 const fs = require('fs');
 const random = require('random');
 
-
 let arrayForNonRepeat = ['none'];
-
 
 let funcToGetStr = function(nameFile) { // Получаю массив строк и количество этих строк
   let words = '';
   let array = [];
   let number = 0;
-  let fileThatRead = fs.readFileSync('../files/' + nameFile + '.txt', 'utf-8');
+  let fileThatRead = fs.readFileSync('./site/files/' + nameFile + '.txt', 'utf-8');
+  // Изменил (../files/' + nameFile + '.txt') на  (./site/files/' + nameFile + '.txt'),
+  // т.к. вызываю главный файл карточек через index.js
   for (let letter = 0; letter < fileThatRead.length; letter++) {
     if (fileThatRead[letter] == '\n') {
       array.push(words);
