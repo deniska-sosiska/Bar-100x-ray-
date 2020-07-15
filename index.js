@@ -6,25 +6,20 @@ const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io').listen(server);
 // var
-let users = [];
+// let users = [];
+let users = 0;
 app.use(express.static(__dirname + '/site'));
 
 //Проверяю подключение сокетов
 io.on('connection', function(socket) {
+  console.log('new user say - "hi"');
+  users++;
 
   socket.on('disconnect', function() {
+    console.log('old user say - "good bye"');
   });
-  // console.log('new user say - "hi"');
-  // console.log('old user say - "good bye"');
 });
 
-// io.on('connection', function(socketRoom) {
-//   console.log('new user from room say - "hi"');
-//
-//   socketRoom.on('disconnect', function() {
-//     console.log('old user from room say - "good bye"');
-//   });
-// });
 
 //"Слушаю" сервер
 server.listen(9999);

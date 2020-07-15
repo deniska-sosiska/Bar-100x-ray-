@@ -46,7 +46,7 @@ for (let i = 0; i < users; i++) {
 
 let forCatastrophe = myFunc.funcToGetStr('Катастрофы');
 let catastrophe = myFunc.createCatastrophe(forCatastrophe);
-
-// console.log(cards);
+cards.unshift(catastrophe);
+console.log(cards);
 module.exports = cards;
 //}
