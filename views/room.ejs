@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Комната №1</title>
+  <link rel="stylesheet" href="/public/css/master.css">
+</head>
+<body>
+  <section class="main rooma">
+    <div class="container">
+      <div class="card">
+        <p>Катастрофа: <%= catastrophe[0] %> </p>
+        <p>Описание катастрофы: <%= catastrophe[1] %></p>
+        <p>Профессия: <%= yourParams.__profession %></p>
+        <p>Здоровье: <%= yourParams.__health %></p>
+        <p>Биологическая характеристика: <%= yourParams.__biologicalCharacterization %></p>
+        <p>Багаж: <%= yourParams.__baggage %></p>
+        <p>Хобби: <%= yourParams.__hobby %></p>
+        <p>Фобии: <%= yourParams.__phobias %></p>
+        <p>Качество человека: <%= yourParams.__humanQuality %></p>
+        <p>Дополнительная информация: <%= yourParams.__additionalInfo %></p>
+        <p>Специальные условия: <%= yourParams.__action %></p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

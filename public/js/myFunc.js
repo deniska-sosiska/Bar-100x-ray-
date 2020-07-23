@@ -7,8 +7,8 @@ let funcToGetStr = function(nameFile) { // Получаю массив стро�
   let words = '';
   let array = [];
   let number = 0;
-  let fileThatRead = fs.readFileSync('./site/files/' + nameFile + '.txt', 'utf-8');
-  // Изменил (../files/' + nameFile + '.txt') на  (./site/files/' + nameFile + '.txt'),
+  let fileThatRead = fs.readFileSync('./public/files/' + nameFile + '.txt', 'utf-8');
+  // Изменил (../files/' + nameFile + '.txt') на  (./public/files/' + nameFile + '.txt'),
   // т.к. вызываю главный файл карточек через index.js
   for (let letter = 0; letter < fileThatRead.length; letter++) {
     if (fileThatRead[letter] == '\n') {

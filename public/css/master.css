@@ -19,7 +19,7 @@ section.main {
 
 section.rooma{
   min-height: 100vh;
-  background: url('img/background_room.png');
+  background: url('../img/background_room.png');
   background-size: auto 100%;
   box-sizing: border-box;
   padding-top: 55px;
@@ -33,6 +33,7 @@ h2 {
 .rooms {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .room {
   display: flex;
@@ -42,6 +43,7 @@ h2 {
   height: 400px;
   background-color: #809fff;
   border-radius: 55px 20px;
+  margin-bottom: 50px;
 }
 .room__title {
   font-size: 22px;

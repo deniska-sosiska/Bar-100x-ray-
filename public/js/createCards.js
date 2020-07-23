@@ -26,11 +26,11 @@ for (let i = 0; i < users; i++) {
   if (random.int(0, 3) == 3) {
     forAdditionalInfo = myFunc.funcToGetStr('Дополнительная информация');
     additionalInfo = myFunc.getAttribute(forAdditionalInfo);
-  } else {  additionalInfo = 'none';  }
+  } else {  additionalInfo = 'Нету';  }
   if (random.int(0, 3) == 3) {
     forAction = myFunc.funcToGetStr('Карты действия');
     action = myFunc.getAttribute(forAction);
-  } else {  action = 'none';  }
+  } else {  action = 'Нету';  }
 
   // Получаю Биологичесткую характеристику
   let age = random.int(18, 68);
@@ -47,6 +47,6 @@ for (let i = 0; i < users; i++) {
 let forCatastrophe = myFunc.funcToGetStr('Катастрофы');
 let catastrophe = myFunc.createCatastrophe(forCatastrophe);
 cards.unshift(catastrophe);
-console.log(cards);
+// console.log(cards);
 module.exports = cards;
 //}
