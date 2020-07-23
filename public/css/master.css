@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-
+  font-family: cursive;
 }
 html, body {
   min-height: 100vh;
@@ -22,7 +22,7 @@ section.rooma{
   background: url('../img/background_room.png');
   background-size: auto 100%;
   box-sizing: border-box;
-  padding-top: 55px;
+  padding-top: 15px;
 }
 
 h2 {
@@ -40,7 +40,7 @@ h2 {
   flex-direction: column;
   justify-content: space-between;
   width: 30%;
-  height: 400px;
+  height: auto;
   background-color: #809fff;
   border-radius: 55px 20px;
   margin-bottom: 50px;
@@ -69,16 +69,32 @@ h2 {
 
 
 .card {
-  margin: auto;
-  padding: 70px;
-  width: 500px;
-  height: auto;
+  padding: 40px 70px;
+}
+
+.card > p {
+  margin-bottom: 10px;
+}
+
+
+
+.catastrophe {
+  width: 700px;
+  margin: 60px auto;
+  padding: 30px;
+  margin-bottom: 50px;
   background-color: #ffc880;
   background-size: 100% 100%;
   border-radius: 30px;
   box-shadow: 1px 1px 55px 1px rgba(255,204,0,1);
 }
 
-.card > p {
-  margin-bottom: 10px;
+.attribute {
+  width: 600px;
+  margin: auto;
+  padding: 30px;
+  background-color: #ffc880;
+  background-size: 100% 100%;
+  border-radius: 30px;
+  box-shadow: 1px 1px 55px 1px rgba(255,204,0,1);
 }

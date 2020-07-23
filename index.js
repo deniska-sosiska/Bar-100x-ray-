@@ -16,7 +16,7 @@ app.get('/', function(req, res) {
 
 app.get('/room:id', function(req, res) {
   myNumber = req.params.id;
-  res.render('room', {roomID: myNumber, catastrophe: createCards[0], yourParams: createCards[myNumber]});
+  res.render('room', {roomID: myNumber, catastrophe: createCards[0], attribute: createCards[myNumber]});
 })
 
 //"Слушаю" сервер
