@@ -2,8 +2,54 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Комната №<%= roomID %></title>
+  <title>Комната №<%= roomID + 1 %></title>
   <link rel="stylesheet" href="/public/css/master.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: cursive;
+    }
+    html, body {
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    section.main {
+      min-height: 100vh;
+      background-color: #ccc;
+      box-sizing: border-box;
+    }
+    section.rooma{
+      min-height: 100vh;
+      background: url('https://i.pinimg.com/564x/44/9b/22/449b22bc23e8940abf777c6afa40502d.jpg');
+      background-size: auto 100%;
+      box-sizing: border-box;
+      padding-top: 15px;
+    }
+    .catastrophe {
+      width: 700px;
+      margin: 60px auto;
+      padding: 30px;
+      margin-bottom: 50px;
+      background-color: #ffc880;
+      background-size: 100% 100%;
+      border-radius: 30px;
+      box-shadow: 1px 1px 55px 1px rgba(255,204,0,1);
+    }
+
+    .attribute {
+      width: 600px;
+      margin: auto;
+      padding: 30px;
+      background-color: #ffc880;
+      background-size: 100% 100%;
+      border-radius: 30px;
+      box-shadow: 1px 1px 55px 1px rgba(255,204,0,1);
+    }
+  </style>
 </head>
 <body>
   <section class="main rooma">

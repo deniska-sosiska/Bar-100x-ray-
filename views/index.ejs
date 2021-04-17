@@ -9,98 +9,25 @@
 <body>
   <section class="main">
     <div class="container">
+
       <h2>Выберите комнату для игры:</h2>
+      <!-- <form action= "/update" method= "POST" >
+        <lable for = "name">Reload game data</lable>
+        <input type = "submit" name = "name" value="ok" />
+      </form> -->
       <div class="rooms">
-        <div class="room">
-          <div class="room__title">
-            <p>Комната 1</p>
-          </div>
-          <div class="room__body">
-            <div class="room__body_btn">
-              <a href="/room1"><input type="button" name="join" id="1" value="Присоедениться"></input></a>
+        <% for(let i = 0; i < countUsers; i++) {%>
+          <div class="room">
+            <div class="room__title">
+              <p>Комната <%= i + 1 %></p>
+            </div>
+            <div class="room__body">
+              <div class="room__body_btn">
+                <a  download href='<%= "/room" + (i + 1) %>'><input type="button" name="join" id="<%= i %>" value="Присоедениться"></input></a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="room">
-          <div class="room__title">
-            <p>Комната 2</p>
-          </div>
-          <div class="room__body">
-            <div class="room__body_btn">
-              <a href="/room2"><input type="button" name="join" id="2" value="Присоедениться"></input></a>
-            </div>
-          </div>
-        </div>
-        <div class="room">
-          <div class="room__title">
-            <p>Комната 3</p>
-          </div>
-          <div class="room__body">
-            <div class="room__body_btn">
-              <a href="/room3"><input  type="button" name="join" id="3" value="Присоедениться"></input></a>
-            </div>
-          </div>
-        </div>
-        <div class="room">
-          <div class="room__title">
-            <p>Комната 4</p>
-          </div>
-          <div class="room__body">
-            <div class="room__body_btn">
-              <a href="/room4"><input type="button" name="join" id="2" value="Присоедениться"></input></a>
-            </div>
-          </div>
-        </div>
-        <div class="room">
-          <div class="room__title">
-            <p>Комната 5</p>
-          </div>
-          <div class="room__body">
-            <div class="room__body_btn">
-              <a href="/room5"><input type="button" name="join" id="2" value="Присоедениться"></input></a>
-            </div>
-          </div>
-        </div>
-        <div class="room">
-          <div class="room__title">
-            <p>Комната 6</p>
-          </div>
-          <div class="room__body">
-            <div class="room__body_btn">
-              <a href="/room6"><input type="button" name="join" id="2" value="Присоедениться"></input></a>
-            </div>
-          </div>
-        </div>
-        <div class="room">
-          <div class="room__title">
-            <p>Комната 7</p>
-          </div>
-          <div class="room__body">
-            <div class="room__body_btn">
-              <a href="/room7"><input type="button" name="join" id="2" value="Присоедениться"></input></a>
-            </div>
-          </div>
-        </div>
-        <div class="room">
-          <div class="room__title">
-            <p>Комната 8</p>
-          </div>
-          <div class="room__body">
-            <div class="room__body_btn">
-              <a href="/room8"><input type="button" name="join" id="2" value="Присоедениться"></input></a>
-            </div>
-          </div>
-        </div>
-        <div class="room">
-          <div class="room__title">
-            <p>Комната 9</p>
-          </div>
-          <div class="room__body">
-            <div class="room__body_btn">
-              <a href="/room9"><input type="button" name="join" id="2" value="Присоедениться"></input></a>
-            </div>
-          </div>
-        </div>
+        <%} %>
       </div>
     </div>
   </section>
